@@ -142,3 +142,16 @@ echarts.setPlatformAPI({
 ```
 
 如果你的图片是需要远程获取的，我们建议你通过 http 请求先预取该图片得到`base64`之后再作为图片的 URL 传入，这样可以保证在 Response 输出的时候图片是加载完成的。
+const img = new Image(); 
+在node环境下提示
+ReferenceError: Image is not defined
+如果const { createCanvas, loadImage } = require("canvas");
+用loadImage(src).then((image) => {
+      image.onload = onload.bind(image);
+      image.onerror = onerror.bind(image);
+      console.log(233);
+      console.log(image);
+      console.log(image.height);
+      return image;
+    });
+    代替，虽然不报错，但图片没加载出来，请问怎么解决
